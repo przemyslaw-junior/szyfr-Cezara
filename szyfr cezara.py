@@ -1,4 +1,4 @@
-# Szyfr cezara
+# Szyfr cezara - szyfrowanie znaków poprzez przesunięcie jego znaku kodu
 
 # funkcja sprawdzająca poprawność przesuniecia o ile miejsc ma się przesunać znak kodu
 def skok(x, min=1, max=26):
@@ -15,11 +15,12 @@ def skok(x, min=1, max=26):
                 continue
     return x
 
-
+# wprowadzenie tekstu do szyrowania
 tekst = input('Wpisz wiadomość do zaszyrowania: ')
 
 szyfr = ''
 klucz = skok("Powiedz o jakie parametr od 1 do 25 zmienimy kod: ")
+
 # właściwy kod szyfrujący
 for i in range(len(tekst)):
 
@@ -29,4 +30,6 @@ for i in range(len(tekst)):
         szyfr += chr(ord(tekst[i])) # nie zmienione znaki nie alfabetyczne oraz liczby
     else:
         szyfr += chr(ord(tekst[i]) + klucz)
+        
+# zaszyfrowany text
 print("Zaszyfrowany tekst ma wygląd:", szyfr)
